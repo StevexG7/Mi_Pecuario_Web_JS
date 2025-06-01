@@ -1,19 +1,26 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { Home } from "./Pages/Home"
-import { NoEncontrado } from "./Pages/NoEncontrado"
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Login from './Pages/LogIn';
+import Inicio from './Pages/Inicio';
+import NoEncontrado from './Pages/NoEncontrado';
+import { CssBaseline } from '@mui/material';
 
 function App() {
+  const isAuthenticated = false;
 
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path='*' element={<NoEncontrado />} />
-        </Routes>
-      </BrowserRouter>
+      <CssBaseline />
+      <Routes>
+        <Route path="/" element={<Navigate to="/login" replace />} />
+        <Route path="/login" element={<Login />} />
+        <Route 
+          path="/inicio" 
+          element={isAuthenticated ? <Inicio /> : <Navigate to="/login" replace />} 
+        />
+        <Route path="*" element={<NoEncontrado />} />
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
