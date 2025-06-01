@@ -1,2 +1,11 @@
-const Inicio = () => <h1>Página de Inicio</h1>;
+import Header from "../Components/Header";
+
+const Inicio = () => {
+  return (
+    <div>
+        <Header />
+    </div>
+  );
+};
+
 export default Inicio;

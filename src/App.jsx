@@ -5,7 +5,7 @@ import NoEncontrado from './Pages/NoEncontrado';
 import { CssBaseline } from '@mui/material';
 
 function App() {
-  const isAuthenticated = false;
+  const isAuthenticated = true;
 
   return (
     <>
