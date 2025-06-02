@@ -1,6 +1,7 @@
 import { Box, Button, TextField, Typography} from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import logo from '../assets/Logo.svg'; // Asegúrate de que la ruta sea correcta
+import logo from '../assets/Logo.svg';
+import Type from '../assets/Type.svg';
 
 const Login = () => {
   return (
@@ -23,23 +24,23 @@ const Login = () => {
         src={logo}
         alt="Logo Pecuario"
         sx={{
-          width: 80,
-          height: 80,
+          width: 150,
+          height:150,
           mb: 1,
           borderRadius: '50%', // opcional
         }}
       />
 
-      {/* Título */}
-      <Typography
-      variant="h4"
-      sx={{
-      mb: 3,
-      fontFamily: '"Lobster", cursive',
-      color: 'primary.text'}}>
-         Pecuario
-      </Typography>
-
+      <Box
+        component="img"
+        src={Type}
+        alt="Type Pecuario"
+        sx={{
+          width: 400,
+          height: 150,
+          mb: 2,
+        }}
+      />
       
       <TextField 
         color="primary.text"
@@ -49,6 +50,18 @@ const Login = () => {
         sx={{  
           width: '300px',
           mb: 2
+        }} 
+      />
+
+      <TextField 
+        color="primary.text"
+        id="Email"
+        label="Correo Electrónico" 
+        variant="outlined" 
+        type="email"
+        sx={{ 
+          width: '300px',
+          mb: 3,
         }} 
       />
       
@@ -71,13 +84,13 @@ const Login = () => {
           width: '100%',
           maxWidth: '300px',
           py: 1.5,
-          backgroundColor: '#FDCB48', // Color personalizado (verde)
-          color: '#2B3D09',            // Color del texto (blanco)
-          borderRadius: '30px',        // Bordes redondeados
-          textTransform: 'none',       // Para que el texto no esté en mayúsculas
-          fontWeight: 'bold',          // Texto más destacado
+          backgroundColor: '#FDCB48', 
+          color: '#2B3D09',            
+          borderRadius: '30px',        
+          textTransform: 'none',       
+          fontWeight: 'bold',          
           '&:hover': {
-            backgroundColor: '#FA980E', // Color al pasar el mouse
+            backgroundColor: '#FA980E',
           },
         }}
 >
@@ -87,8 +100,8 @@ const Login = () => {
 <Typography
   variant="body2"
   sx={{
-    mt: 2, // Margen superior
-    color: 'primary.contrastText', 
+    mt: 1,
+    color: 'primary.text', 
     cursor: 'pointer',
     textDecoration: 'underline',
     '&:hover': {
